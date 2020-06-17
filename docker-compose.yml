@@ -19,6 +19,8 @@ services:
       - postgres_data:/var/lib/postgresql/data
   influx:
     image: influxdb
+    ports:
+        - 8086:8086
     environment:
       - INFLUXDB_DB=smart_factory
       - INFLUXDB_USER=admin

@@ -1,0 +1,1 @@
+find ./grafana/plugins -maxdepth 3 -name "package.json" -execdir npm install \;

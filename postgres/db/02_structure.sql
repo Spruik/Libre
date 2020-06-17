@@ -38,7 +38,8 @@ CREATE TABLE material_requirement (
 CREATE TABLE operation (
   id SERIAL,
   name character varying(20) NOT NULL,
-  sequence integer NULL
+  sequence integer NOT NULL,
+  UNIQUE(sequence)
 );
 
 ALTER TABLE operation ADD CONSTRAINT operation_pkey PRIMARY KEY (id);

@@ -2,9 +2,10 @@
     "annotations": {
       "list": [
         {
+        "$$hashKey": "object:876",
           "builtIn": 1,
           "datasource": "-- Grafana --",
-          "enable": true,
+        "enable": false,
           "hide": false,
           "iconColor": "#cffaff",
           "limit": 100,
@@ -18,8 +19,6 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 112,
-    "iteration": 1592358700212,
     "links": [
       {
         "asDropdown": true,
@@ -36,7 +35,7 @@
     "panels": [
       {
         "columns": [],
-        "datasource": "Flux",
+      "datasource": "InfluxDB",
         "fontSize": "100%",
         "gridPos": {
           "h": 3,
@@ -56,12 +55,14 @@
         "styles": [
           {
             "alias": "Time",
+          "align": "auto",
             "dateFormat": "YYYY-MM-DD HH:mm:ss",
             "pattern": "Time",
             "type": "date"
           },
           {
             "alias": "",
+          "align": "auto",
             "colorMode": null,
             "colors": [
               "rgba(245, 54, 54, 0.9)",
@@ -78,6 +79,7 @@
           },
           {
             "alias": "",
+          "align": "auto",
             "colorMode": null,
             "colors": [
               "rgba(245, 54, 54, 0.9)",
@@ -95,11 +97,42 @@
         ],
         "targets": [
           {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
             "query": "from(bucket:\"smart_factory/autogen\")  \n|> range(start: -50w)  \n|> filter(fn: (r) => r._measurement == \"OrderPerformance\")\n|> filter(fn: (r) => r._field == \"order_state\"or r._field==\"order_id\"or r._field==\"order_qty\"or r._field==\"order_date\"or r._field==\"order_state\"or r._field==\"production_line\"or r._field==\"scheduled_start_datetime\"or r._field==\"scheduled_end_datetime\"or r._field==\"planned_changeover_time\"or r._field==\"planned_rate\" or r._field==\"issued_qty\")\n|> last()\n|> fill(usePrevious: true)\n\n|> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n|> group(columns:[\"order_id\",\"product_id\",\"product_desc\"])\n\n|> filter(fn:(r) => r.production_line == \"$Site | $Area | $Line\")\n\n|> filter(fn:(r) => r.order_state == \"Running\")\n",
             "refId": "A",
-            "resultFormat": "table"
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
           }
+            ]
         ],
+          "tags": []
+        }
+      ],
         "timeFrom": null,
         "timeShift": null,
         "title": "Current Running Order",
@@ -115,7 +148,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "decimals": 0,
         "format": "none",
         "gauge": {
@@ -137,10 +170,12 @@
         "mappingType": 1,
         "mappingTypes": [
           {
+          "$$hashKey": "object:974",
             "name": "value to text",
             "value": 1
           },
           {
+          "$$hashKey": "object:975",
             "name": "range to text",
             "value": 2
           }
@@ -214,6 +249,7 @@
         "valueFontSize": "80%",
         "valueMaps": [
           {
+          "$$hashKey": "object:977",
             "op": "=",
             "text": "N/A",
             "value": "null"
@@ -230,7 +266,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "decimals": null,
         "format": "none",
         "gauge": {
@@ -345,7 +381,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "decimals": 2,
         "format": "s",
         "gauge": {
@@ -460,7 +496,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "decimals": 2,
         "format": "s",
         "gauge": {
@@ -559,7 +595,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "format": "percentunit",
         "gauge": {
           "maxValue": 100,
@@ -608,7 +644,7 @@
           "lineColor": "rgb(31, 120, 193)",
           "show": false
         },
-        "tableColumn": "sum_sum_sum",
+      "tableColumn": "",
         "targets": [
           {
             "alias": "",
@@ -673,7 +709,7 @@
           "rgba(237, 129, 40, 0.89)",
           "#d44a3a"
         ],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "format": "percentunit",
         "gauge": {
           "maxValue": 100,
@@ -787,7 +823,7 @@
           "#FADE2A",
           "#F2495C"
         ],
-        "datasource": "camunda",
+      "datasource": "InfluxDB",
         "format": "none",
         "gauge": {
           "maxValue": 100,
@@ -804,8 +840,7 @@
         },
         "id": 27,
         "interval": null,
-        "links": [
-        ],
+      "links": [],
         "mappingType": 1,
         "mappingTypes": [
           {
@@ -889,7 +924,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "gridPos": {
           "h": 7,
           "w": 5,
@@ -899,11 +934,31 @@
         "id": 8,
         "links": [],
         "options": {
-          "maxValue": "70",
-          "minValue": 0,
-          "showThresholdLabels": false,
-          "showThresholdMarkers": false,
-          "thresholds": [
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": null,
+            "mappings": [
+              {
+                "from": "",
+                "id": 1,
+                "operator": "",
+                "text": "STOPPED",
+                "to": "",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": "70",
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
             {
               "color": "#AD0317",
               "index": 0,
@@ -919,26 +974,18 @@
               "index": 2,
               "value": 45
             }
-          ],
-          "valueMappings": [
-            {
-              "from": "",
-              "id": 1,
-              "operator": "",
-              "text": "STOPPED",
-              "to": "",
-              "type": 1,
-              "value": "0"
-            }
-          ],
-          "valueOptions": {
-            "decimals": null,
-            "prefix": "",
-            "stat": "avg",
-            "suffix": "",
+              ]
+            },
             "unit": "none"
-          }
+          },
+          "overrides": [],
+          "values": false
         },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false
+        },
+      "pluginVersion": "6.7.4",
         "targets": [
           {
             "alias": "",
@@ -993,14 +1040,16 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "fill": 5,
+      "fillGradient": 0,
         "gridPos": {
           "h": 7,
           "w": 19,
           "x": 5,
           "y": 5
         },
+      "hiddenSeries": false,
         "id": 2,
         "legend": {
           "avg": false,
@@ -1016,6 +1065,9 @@
         "linewidth": 1,
         "links": [],
         "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
         "paceLength": 10,
         "percentage": false,
         "pointradius": 5,
@@ -1252,7 +1304,7 @@
       {
         "camundaUrl": {},
         "columns": [],
-        "datasource": "influxdb",
+      "datasource": "InfluxDB",
         "durationFilter": 3,
         "endPoint": "Performance",
         "equipmentEndPoint": "equipment",
@@ -1488,7 +1540,7 @@
       }
     ],
     "refresh": "10s",
-    "schemaVersion": 18,
+  "schemaVersion": 22,
     "style": "dark",
     "tags": [
       "SmartFactory"
@@ -1501,6 +1553,7 @@
           "definition": "Select site from equipment",
           "hide": 0,
           "includeAll": false,
+        "index": -1,
           "label": "Site",
           "multi": false,
           "name": "Site",
@@ -1518,14 +1571,11 @@
         },
         {
           "allValue": null,
-          "current": {
-            "text": "Pizza",
-            "value": "Pizza"
-          },
           "datasource": "PostgreSQL",
           "definition": "select area from equipment where area is not null and site = '$Site'",
           "hide": 0,
           "includeAll": false,
+        "index": -1,
           "label": "Area",
           "multi": false,
           "name": "Area",
@@ -1547,6 +1597,7 @@
           "definition": "select production_line from equipment where production_line is not null and area = '$Area' and site = '$Site'",
           "hide": 0,
           "includeAll": false,
+        "index": -1,
           "label": "Line",
           "multi": false,
           "name": "Line",
@@ -1595,5 +1646,8 @@
     },
     "timezone": "",
     "title": "Line Performance",
+  "variables": {
+    "list": []
+  },
     "version": 1
   }

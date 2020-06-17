@@ -37,3 +37,6 @@
 [submodule "grafana/plugins/smart-factory-qacheck-history-table-panel"]
 	path = grafana/plugins/smart-factory-qacheck-history-table-panel
 	url = https://github.com/Spruik/smart-factory-qacheck-history-table-panel
+[submodule "grafana/plugins/smart-factory-operation-crud-table-panel"]
+	path = grafana/plugins/smart-factory-operation-crud-table-panel
+	url = https://github.com/Spruik/smart-factory-operation-crud-table-panel

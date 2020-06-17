@@ -95,7 +95,7 @@
       },
       {
         "columns": [],
-        "datasource": "influxdb",
+        "datasource": "InfluxDB",
         "fontSize": "100%",
         "gridPos": {
           "h": 11,
