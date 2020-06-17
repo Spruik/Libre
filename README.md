@@ -1,5 +1,5 @@
 # Libre
-| Opensource Manufacturing Execution and Performance Monitoring built on Grafana, Influx and Postgres.
+| Open source Manufacturing Execution and Performance Monitoring built on Grafana, Influx, and Postgres.
 
 ## Quickstart
 
