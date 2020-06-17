@@ -1,0 +1,39 @@
+[submodule "plugins/smart-factory-operator-order-mgt-table-panel"]
+	path = plugins/smart-factory-operator-order-mgt-table-panel
+	url = https://github.com/Spruik/smart-factory-operator-order-mgt-table-panel
+[submodule "grafana/plugins/smart-factory-scheduler-order-mgt-table-panel"]
+	path = grafana/plugins/smart-factory-scheduler-order-mgt-table-panel
+	url = https://github.com/Spruik/smart-factory-scheduler-order-mgt-table-panel
+[submodule "grafana/plugins/smart-factory-pareto-reason-codes-bar-chart-panel"]
+	path = grafana/plugins/smart-factory-pareto-reason-codes-bar-chart-panel
+	url = https://github.com/Spruik/smart-factory-pareto-reason-codes-bar-chart-panel
+[submodule "grafana/plugins/smart-factory-pareto-reason-codes-sunburst-chart-panel"]
+	path = grafana/plugins/smart-factory-pareto-reason-codes-sunburst-chart-panel
+	url = https://github.com/Spruik/smart-factory-pareto-reason-codes-sunburst-chart-panel
+[submodule "grafana/plugins/smart-factory-event-editor-table-panel"]
+	path = grafana/plugins/smart-factory-event-editor-table-panel
+	url = https://github.com/Spruik/smart-factory-event-editor-table-panel
+[submodule "grafana/plugins/smart-factory-equipment-crud-tree-chart-panel"]
+	path = grafana/plugins/smart-factory-equipment-crud-tree-chart-panel
+	url = https://github.com/Spruik/smart-factory-equipment-crud-tree-chart-panel
+[submodule "grafana/plugins/smart-factory-reason-codes-crud-tree-chart-panel"]
+	path = grafana/plugins/smart-factory-reason-codes-crud-tree-chart-panel
+	url = https://github.com/Spruik/smart-factory-reason-codes-crud-tree-chart-panel
+[submodule "grafana/plugins/smart-factory-material-crud-table-panel"]
+	path = grafana/plugins/smart-factory-material-crud-table-panel
+	url = https://github.com/Spruik/smart-factory-material-crud-table-panel
+[submodule "grafana/plugins/smart-factory-products-crud-table-panel"]
+	path = grafana/plugins/smart-factory-products-crud-table-panel
+	url = https://github.com/Spruik/smart-factory-products-crud-table-panel
+[submodule "grafana/plugins/smart-factory-prod-line-time-setter-panel"]
+	path = grafana/plugins/smart-factory-prod-line-time-setter-panel
+	url = https://github.com/Spruik/smart-factory-prod-line-time-setter-panel
+[submodule "grafana/plugins/smart-factory-production-schedule-gantt-chart-panel"]
+	path = grafana/plugins/smart-factory-production-schedule-gantt-chart-panel
+	url = https://github.com/Spruik/smart-factory-production-schedule-gantt-chart-panel
+[submodule "grafana/plugins/smart-factory-pareto-reason-codes-pie-chart-panel"]
+	path = grafana/plugins/smart-factory-pareto-reason-codes-pie-chart-panel
+	url = https://github.com/Spruik/smart-factory-pareto-reason-codes-pie-chart-panel
+[submodule "grafana/plugins/smart-factory-qacheck-history-table-panel"]
+	path = grafana/plugins/smart-factory-qacheck-history-table-panel
+	url = https://github.com/Spruik/smart-factory-qacheck-history-table-panel

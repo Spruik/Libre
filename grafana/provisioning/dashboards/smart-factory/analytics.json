@@ -1,0 +1,574 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 101,
+    "links": [],
+    "panels": [
+      {
+        "content": "<div class=\"text-center dashboard-header\">\n  <span>Reason Codes Analysis</span>\n</div>\n\n\n\n",
+        "gridPos": {
+          "h": 2,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 22,
+        "links": [],
+        "mode": "html",
+        "options": {},
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "columns": [],
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 12,
+          "w": 24,
+          "x": 0,
+          "y": 2
+        },
+        "id": 12,
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "showHeader": true,
+        "styles": [],
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT \"Site\", \"Area\", \"Line\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"comment\", \"parentReason\" FROM \"Availability\"  WHERE $timeFilter",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "Pareto Chart - Reason Codes",
+        "type": "smart-factory-pareto-reason-codes-bar-chart-panel"
+      },
+      {
+        "columns": [],
+        "datasource": "influxdb",
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 11,
+          "w": 14,
+          "x": 0,
+          "y": 14
+        },
+        "id": 10,
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "showHeader": true,
+        "styles": [],
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT \"Site\", \"Area\", \"Line\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"comment\", \"parentReason\" FROM \"Availability\"  WHERE $timeFilter",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "Reason Codes Frequency & Duration",
+        "type": "smart-factory-pareto-reason-codes-pie-chart-panel"
+      },
+      {
+        "columns": [],
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 11,
+          "w": 10,
+          "x": 14,
+          "y": 14
+        },
+        "id": 14,
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "showHeader": true,
+        "styles": [],
+        "targets": [
+          {
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT \"Site\", \"Area\", \"Line\", \"duration\", \"durationInt\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"comment\", \"parentReason\" FROM \"Availability\"  WHERE $timeFilter",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "Reason Codes Sunburst",
+        "type": "smart-factory-pareto-reason-codes-sunburst-chart-panel"
+      },
+      {
+        "content": "<div class=\"text-center dashboard-header\">\n  <span>QA Check History</span>\n</div>\n\n\n",
+        "gridPos": {
+          "h": 2,
+          "w": 24,
+          "x": 0,
+          "y": 25
+        },
+        "id": 24,
+        "links": [],
+        "mode": "html",
+        "options": {},
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "columns": [],
+        "datasource": "PostgreSQL",
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 27
+        },
+        "id": 26,
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": null,
+          "desc": false
+        },
+        "styles": [
+          {
+            "alias": "Checked Time",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "qa_form",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          },
+          {
+            "alias": "Checked By",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "line_lead_form",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          },
+          {
+            "alias": "Check ID",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "link": false,
+            "mappingType": 1,
+            "pattern": "id",
+            "preserveFormat": false,
+            "sanitize": false,
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          },
+          {
+            "alias": "Production Line",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "production_line",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Product ID",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "product_id",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Product Description",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "product_description",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Reviewed At",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "reviewed_at",
+            "thresholds": [],
+            "type": "date",
+            "unit": "short",
+            "valueMaps": [
+              {
+                "text": "YES",
+                "value": "1"
+              },
+              {
+                "text": "NO",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "alias": "Reviewed By",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "reviewed_by",
+            "preserveFormat": false,
+            "rangeMaps": [],
+            "thresholds": [],
+            "type": "string",
+            "unit": "short",
+            "valueMaps": []
+          },
+          {
+            "alias": "Reviewed Time",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "comment",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          },
+          {
+            "alias": "Order Created At",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 0,
+            "mappingType": 1,
+            "pattern": "order_created_at",
+            "thresholds": [],
+            "type": "date",
+            "unit": "short"
+          },
+          {
+            "alias": "Failed Items",
+            "colorMode": "value",
+            "colors": [
+              "rgb(55, 59, 55)",
+              "rgb(49, 54, 49)",
+              "rgba(245, 54, 54, 0.9)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 0,
+            "mappingType": 1,
+            "pattern": "num_out_of_range",
+            "thresholds": [
+              "0",
+              "1"
+            ],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Total Checks",
+            "colorMode": "value",
+            "colors": [
+              "#E02F44",
+              "#E02F44",
+              "rgba(58, 64, 58, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 0,
+            "mappingType": 1,
+            "pattern": "num_of_check",
+            "thresholds": [
+              "0",
+              "1"
+            ],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Checked By",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "checked_by",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Order ID",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "order_id",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          }
+        ],
+        "targets": [
+          {
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "select * from process_control_form",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "value_double"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "test_data",
+            "timeColumn": "time_date_time",
+            "timeColumnType": "timestamp",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "QA History",
+        "transform": "table",
+        "type": "smart-factory-qacheck-history-table-panel"
+      }
+    ],
+    "schemaVersion": 18,
+    "style": "dark",
+    "tags": [
+      "SmartFactory"
+    ],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1y",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "",
+    "title": "Analytics",
+    "version": 1
+  }

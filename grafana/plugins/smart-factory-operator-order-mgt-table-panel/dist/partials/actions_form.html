@@ -1,0 +1,100 @@
+<div class="modal-body" id="" style="">
+    <div class="modal-header">
+      <h2 class="modal-header-title">
+        <i class="fa fa-info-circle"></i>
+        <span class="p-l-1">Actions For Order : {{model.orderId}}</span>
+      </h2>
+  
+      <a class="modal-header-close" id="order-mgt-operator-action-option-close-btn" ng-click="dismiss();">
+        <i class="fa fa-remove"></i>
+      </a>
+    </div>
+  
+      <div
+        class="modal-content"
+        id="modal-modal-content"
+        style="max-height:600px; overflow-y:scroll"
+      >
+        <div class="text-center">
+          <div class="radio-tile-group">
+            <!-- Flag -->
+            <div class="input-container" style="height:4.5rem;width:4.5rem;">
+              <input
+                id="flag"
+                class="radio-button"
+                type="button"
+                name="order-mgt-operator-actions-radio"
+              />
+              <div class="radio-tile">
+                <div class="icon edit-icon">
+                  <i class="fa fa-flag fa-2x"></i>
+                </div>
+                <label for="edit" class="radio-tile-label">Flag</label>
+              </div>
+            </div>
+            <!-- Start -->
+            <div class="input-container" style="height:4.5rem;width:4.5rem;">
+              <input
+                id="start"
+                class="radio-button"
+                type="button"
+                name="order-mgt-operator-actions-radio"
+              />
+              <div class="radio-tile">
+                <div class="icon split-icon">
+                  <i class="fa fa-play-circle-o fa-2x"></i>
+                </div>
+                <label for="split" class="radio-tile-label">Start</label>
+              </div>
+            </div>
+            <!-- Pause -->
+            <div class="input-container" style="height:4.5rem;width:4.5rem;">
+              <input
+                id="pause"
+                class="radio-button"
+                type="button"
+                name="order-mgt-operator-actions-radio"
+              />
+              <div class="radio-tile">
+                <div class="icon split-icon">
+                  <i class="fa fa-pause fa-2x"></i>
+                </div>
+                <label for="split" class="radio-tile-label">Pause</label>
+              </div>
+            </div>
+            <!-- Complete -->
+            <div class="input-container" style="height:4.5rem;width:4.5rem;">
+              <input
+                id="complete"
+                class="radio-button"
+                type="button"
+                name="order-mgt-operator-actions-radio"
+              />
+              <div class="radio-tile">
+                <div class="icon split-icon">
+                  <i class="fa fa-check fa-2x"></i>
+                </div>
+                <label for="split" class="radio-tile-label">Complete</label>
+              </div>
+            </div>
+            <!-- Close -->
+            <div class="input-container" style="height:4.5rem;width:4.5rem;">
+              <input
+                id="close"
+                class="radio-button"
+                type="button"
+                name="order-mgt-operator-actions-radio"
+              />
+              <div class="radio-tile">
+                <div class="icon split-icon">
+                  <i class="fa fa-times fa-2x"></i>
+                </div>
+                <label for="split" class="radio-tile-label">Close</label>
+              </div>
+            </div>
+            <button id="order-mgt-operator-action-form-dismiss-btn" style="display:none" ng-click="dismiss();"></button>
+          </div>
+        </div>
+      </div>
+  </div>
+  

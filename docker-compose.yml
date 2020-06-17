@@ -1,0 +1,42 @@
+version: '3.6'
+
+services:
+  grafana:
+    build: ./grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_plugins:/var/lib/grafana/plugins
+      - grafana_provisioning:/etc/grafana/provisioning
+    depends_on: 
+      - postgres
+      - influx
+  postgres:
+    build: ./postgres
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+  influx:
+    image: influxdb
+    environment:
+      - INFLUXDB_DB=smart_factory
+      - INFLUXDB_USER=admin
+      - INFLUXDB_USER_PASSWORD=admin
+    volumes:
+      - influx_data:/var/lib/influxdb
+  postREST:
+    image: postgrest/postgrest
+    ports: 
+      - 5436:3000
+    environment:
+      - PGRST_DB_URI=postgres://postgres:mysecretpassword@postgres/smartfactory
+      - PGRST_DB_ANON_ROLE=postgres
+    depends_on: 
+      - postgres
+
+volumes:
+  grafana_plugins:
+  grafana_provisioning:
+  postgres_data:
+  influx_data:
