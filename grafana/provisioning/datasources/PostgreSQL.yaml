@@ -20,7 +20,7 @@ datasources:
     # <string> url
     url: postgres
     # <string> database user, if used
-    user: postgres
+    user: $POSTGRES_USER
     # <string> database name, if used
     database: smartfactory
     # <bool> enable/disable basic auth
@@ -39,7 +39,7 @@ datasources:
       sslmode: disable
     # <string> json object of data that will be encrypted.
     secureJsonData:
-      password: mysecretpassword
+      password: $POSTGRES_PASSWORD
     version: 1
     # <bool> allow users to edit datasources from the UI.
     editable: false

@@ -1,5 +1,14 @@
 version: '3.6'
 
+x-common-postgres-variables: &common-postgres-variables
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: mysecretpassword
+  
+x-common-influx-variables: &common-influx-variables
+  INFLUXDB_DB: smart_factory
+  INFLUXDB_USER: admin
+  INFLUXDB_USER_PASSWORD: admin
+
 services:
   grafana:
     build: ./grafana
@@ -8,23 +17,22 @@ services:
     volumes:
       - grafana_plugins:/var/lib/grafana/plugins
       - grafana_provisioning:/etc/grafana/provisioning
+    environment: 
+      <<: *common-postgres-variables
+      <<: *common-influx-variables
     depends_on: 
       - postgres
       - influx
   postgres:
     build: ./postgres
-    environment:
-      - POSTGRES_PASSWORD=mysecretpassword
+    environment: *common-postgres-variables
     volumes: 
       - postgres_data:/var/lib/postgresql/data
   influx:
     image: influxdb
     ports:
         - 8086:8086
-    environment:
-      - INFLUXDB_DB=smart_factory
-      - INFLUXDB_USER=admin
-      - INFLUXDB_USER_PASSWORD=admin
+    environment: *common-influx-variables
     volumes:
       - influx_data:/var/lib/influxdb
   postREST:
