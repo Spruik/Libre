@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/module.js"],"names":["TableCtrl"],"mappings":";;;;;;;;AAASA,e,eAAAA,S;;;2BAEAA,S;;2BAAWA,S","file":"module.js","sourcesContent":["import { TableCtrl } from './table_ctrl';\n\nexport { TableCtrl, TableCtrl as PanelCtrl };\n"]}
