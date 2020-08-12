@@ -673,6 +673,7 @@
   },
   "timezone": "",
   "title": "Master Data",
+  "uid": "libreMasterData",
   "variables": {
     "list": []
   },

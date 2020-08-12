@@ -518,6 +518,7 @@
     ]
   },
   "timezone": "",
+  "uid": "libreScheduling",
   "title": "Scheduling",
   "version": 1
 }
