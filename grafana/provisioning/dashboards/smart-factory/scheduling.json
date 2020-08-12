@@ -84,7 +84,7 @@
       ],
       "timeFrom": "3y",
       "title": "Production Schedule Gantt Chart",
-      "type": "smart-factory-production-schedule-gantt-chart-panel"
+      "type": "libre-production-schedule-gantt-chart-panel"
     },
     {
       "columns": [],
@@ -332,7 +332,7 @@
       "timeFrom": null,
       "title": "Scheduler Order Management Table",
       "transform": "table",
-      "type": "smart-factory-scheduler-order-mgt-table-panel"
+      "type": "libre-scheduler-order-mgt-table-panel"
     },
     {
       "columns": [],
@@ -476,7 +476,7 @@
       ],
       "title": "Production Line Start Time Setter",
       "transform": "table",
-      "type": "smart-factory-prod-line-time-setter-panel"
+      "type": "libre-production-line-time-setter-panel"
     }
   ],
   "refresh": "5s",

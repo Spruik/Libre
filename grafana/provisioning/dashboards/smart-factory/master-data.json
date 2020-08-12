@@ -160,7 +160,7 @@
       "timeShift": null,
       "title": "Raw Material",
       "transform": "table",
-      "type": "smart-factory-material-crud-table-panel"
+      "type": "libre-material-crud-table-panel"
     },
     {
       "columns": [],
@@ -256,7 +256,7 @@
       "timeShift": null,
       "title": "Product Operation",
       "transform": "table",
-      "type": "smart-factory-operation-crud-table-panel"
+      "type": "libre-operation-crud-table-panel"
     },
     {
       "columns": [],
@@ -497,7 +497,7 @@
       ],
       "title": "Product",
       "transform": "table",
-      "type": "smart-factory-products-crud-table-panel"
+      "type": "libre-product-crud-table-panel"
     },
     {
       "columns": [],
@@ -564,7 +564,7 @@
         }
       ],
       "title": "Equipment",
-      "type": "smart-factory-equipment-crud-tree-chart-panel"
+      "type": "libre-equipment-crud-tree-chart-panel"
     },
     {
       "columns": [],
@@ -631,7 +631,7 @@
         }
       ],
       "title": "Reason Codes",
-      "type": "smart-factory-reason-codes-crud-tree-chart-panel"
+      "type": "libre-reason-codes-crud-tree-chart-panel"
     }
   ],
   "schemaVersion": 22,

@@ -260,7 +260,7 @@
         "timeFrom": null,
         "title": "Operator Order Management Table",
         "transform": "table",
-        "type": "smart-factory-operator-order-mgt-table-panel"
+        "type": "libre-operator-order-mgt-table-panel"
       }
     ],
     "refresh": "5s",

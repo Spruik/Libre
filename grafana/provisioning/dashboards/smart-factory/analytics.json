@@ -91,7 +91,7 @@
           }
         ],
         "title": "Pareto Chart - Reason Codes",
-        "type": "smart-factory-pareto-reason-codes-bar-chart-panel"
+        "type": "libre-downtime-pareto-chart-panel"
       },
       {
         "columns": [],
@@ -149,7 +149,7 @@
           }
         ],
         "title": "Reason Codes Frequency & Duration",
-        "type": "smart-factory-pareto-reason-codes-pie-chart-panel"
+        "type": "libre-downtime-pie-chart-panel"
       },
       {
         "columns": [],
@@ -206,7 +206,7 @@
           }
         ],
         "title": "Reason Codes Sunburst",
-        "type": "smart-factory-pareto-reason-codes-sunburst-chart-panel"
+        "type": "libre-downtime-sunburst-chart-panel"
       },
       {
         "content": "<div class=\"text-center dashboard-header\">\n  <span>QA Check History</span>\n</div>\n\n\n",
@@ -528,7 +528,7 @@
         "timeShift": null,
         "title": "QA History",
         "transform": "table",
-        "type": "smart-factory-qacheck-history-table-panel"
+        "type": "libre-qacheck-history-table-panel"
       }
     ],
     "schemaVersion": 18,
