@@ -59,13 +59,19 @@ Define your factory model using the provided `SmartFactory/Master Data` dashboar
 
 Next, define your reason codes. Long click ReasonCodes in the Reason Codes panel and add a category. Once a category has been created, long click the category to add in a reason.
 
-| Two recommend categories are `Planned` and `Unplanned`
+> Two recommend categories are `Planned` and `Unplanned`
 
 ![Reason Codes](/docs/reason-codes.png)
 
-Ingredients are added during product operations. Products are made up of a number of product operations. Finally products can be categorized by groups. Start by entering in Raw Material information by clicking the (+) on the Raw Material panel. These are the ingredients that go into your final product. Once raw materials have been added, add in the required Product Operationsin the Product Operation panel. Product Operations are the steps to manufacture the final product and is where a raw ingredient is added. For example `Fill Tank` or `Add Label`.
+Raw Materials are added during product operations. Products are made up of a number of product operations. Finally products can be categorized by groups. Start by entering in Raw Material information by clicking the (+) on the Raw Material panel. These are the ingredients that go into your final product. Once raw materials have been added, add in the required Product Operationsin the Product Operation panel. Product Operations are the steps to manufacture the final product and is where a raw ingredient is added. For example `Fill Tank` or `Add Label`.
+
+![Raw Materials](docs/raw-material.png)
+
+![Product Operations](docs/product-operation.png)
 
 Once Raw Materials and Product Operations are added create a Product group using the Products Panel. Click the (+) and select Product Group, enter a name and save. Follow the same process and select Product. You can now add any number of product operations, and optionally an ingredient, to the product definition. At a minimum provide a product name, product group and save. Repeat for all your products.
+
+![Products](docs/product.png)
 
 Now that you have defined your factory model, downtime reasons, ingredients, product operations and products your are ready to start schedulling orders.
 
@@ -73,9 +79,13 @@ Now that you have defined your factory model, downtime reasons, ingredients, pro
 
 Schedule orders on your lines using the `SmartFactory/Schedulling` dashboard. To setup use the `Production Line Start Time Setter` to define the start time for each line. This is the time whereby an order will be first scheduled for the day. For 24hr operation, set to 12:00AM.
 
-Use the `Scheduler Order Management Table` panel to create orders. Click the (+) define the order details and submit. Orders can be edited until they are released. Once an order has been released it can no longer be edited. Orders are edited by clicking in them in the panel. Orders have the following state model:
+Use the `Scheduler Order Management Table` panel to create orders. Click the (+) define the order details and submit. Orders can be edited until they are released. Once an order has been released it can no longer be edited. Orders are edited by clicking in them in the panel.
 
-```mermaidjs
+![Scheduler Table](docs/scheduler-order-mgt-table-panel.gif)
+
+Orders have the following state model:
+
+```mermaid
 stateDiagram
   Created --> Released
   Released --> Next
@@ -103,73 +113,61 @@ Machines will need to push data to the following buckets and schemas.
 
 #### Availability
 
-The machine will need to publish to the `Availability` Influx bucket with the following information. It is important that the tags match the [model definition](#Define-your-factory-Model). Log data on state change.
+The machine will need to publish to the `Availability` Influx bucket with the following information. It is important that the tags match the [model definition](#Define-your-factory-Model). Log data on state change. `category`, `reason`, `parentReason` and `comment` are for classification of downtime category/reason. The Machine can self report (if known), otherwise leave blank. An operator can always split a reason and override
 
-- `Site`
-- `Area`
-- `Line`
-
-and fields:
-
-- `idle`, `stopped` - number -  ∈ [1, 0] for active / not active
-- `stopped` - number -  ∈ [1, 0] for active / not active
-- `held` - number -  ∈ [1, 0] for active / not active
-- `execute` - number -  ∈ [1, 0] for active / not active
-- `complete` - number - ∈ [1, 0] for active / not active
-- `status` - string - ∈ ['idle', 'stopped', 'held', 'execute', 'complete']. String representation of state
-
-the following fields are for classification of downtime category/reason. The Machine can self report (if known), otherwise leave blank. An operator can always split a reason and override
-
-- `category` - string - Label of Category
-- `reason` - string - Label of Reason
-- `parentReason` - string - child reason of category (same as reason above)
-- `comment` - string - Comment on the reason
+| Name         | Type  | Variable Type | Details                                                                                       |
+|--------------|-------|---------------|-----------------------------------------------------------------------------------------------|
+| Site         | tag   | string        |                                                                                               |
+| Area         | tag   | string        |                                                                                               |
+| Line         | tag   | string        |                                                                                               |
+| idle         | field | number        | ∈ [1, 0] for active / not active                                                              |
+| stopped      | field | number        | ∈ [1, 0] for active / not active                                                              |
+| held         | field | number        | ∈ [1, 0] for active / not active                                                              |
+| execute      | field | number        | ∈ [1, 0] for active / not active                                                              |
+| complete     | field | number        | ∈ [1, 0] for active / not active                                                              |
+| status       | field | string        | String - ∈ ['idle', 'stopped', 'held', 'execute', 'complete']. String representation of state |
+| category     | field | string        | Label of the category                                                                         |
+| reason       | field | string        | Label of the reason                                                                           |
+| parentReason | field | string        | Child reason of the category (same reason as above)                                           |
+| comment      | field | string        | Comment on the reason                                                                         |
 
 #### Performance
 
-The machine will need to publish to the `Performance` Influx bucket with the following information. It is important that the tags match the [model definition](#Define-your-factory-Model). Log data on state, planned rate or a significant actual_rate change.
+The machine will need to publish to the `Performance` Influx bucket with the following information. It is important that the tags match the [model definition](#Define-your-factory-Model). Log data on state, planned rate or a significant actual_rate change. Ensure to use identical units for `planned_rate` and `actual_rate`.
 
-- `Site`
-- `Area`
-- `Line`
-
-and fields:
-
-- `idle`, `stopped` - number -  ∈ [1, 0] for active / not active
-- `stopped` - number -  ∈ [1, 0] for active / not active
-- `held` - number -  ∈ [1, 0] for active / not active
-- `execute` - number -  ∈ [1, 0] for active / not active
-- `complete` - number - ∈ [1, 0] for active / not active
-- `status` - string - ∈ ['idle', 'stopped', 'held', 'execute', 'complete']. String representation of state
-
-the following fields are for performance calculation
-
-- `planned_rate` - float - The planned rate or line theoretically best possible rate
-- `actual_rate` - float - The actual machine rate
-
-Ensure to use identical units for planned_rate and actual_rate.
+| Name         | Type  | Variable Type | Details                                                                                       |
+|--------------|-------|---------------|-----------------------------------------------------------------------------------------------|
+| Site         | tag   | string        |                                                                                               |
+| Area         | tag   | string        |                                                                                               |
+| Line         | tag   | string        |                                                                                               |
+| idle         | field | number        | ∈ [1, 0] for active / not active                                                              |
+| stopped      | field | number        | ∈ [1, 0] for active / not active                                                              |
+| held         | field | number        | ∈ [1, 0] for active / not active                                                              |
+| execute      | field | number        | ∈ [1, 0] for active / not active                                                              |
+| complete     | field | number        | ∈ [1, 0] for active / not active                                                              |
+| status       | field | string        | String - ∈ ['idle', 'stopped', 'held', 'execute', 'complete']. String representation of state |
+| planned_rate | field | float         | The planned rate or line theoretically best possible rate                                     |
+| actual_rate  | field | float         | The actual machine rate                                                                       |
 
 #### Quality
 
 The machine will need to publish to the `Quality` Influx bucket with the following information. It is important that the tags match the [model definition](#Define-your-factory-Model). Log data on state, planned rate or a significant actual_rate change.
 
-- `Site`
-- `Area`
-- `Line`
-
-and fields:
-
-- `Temp` - number -  Quantity of good product this order
+| Name         | Type  | Variable Type | Details                             |
+|--------------|-------|---------------|-------------------------------------|
+| Site         | tag   | string        |                                     |
+| Area         | tag   | string        |                                     |
+| Line         | tag   | string        |                                     |
+| Temp         | field | number        | Quantity of good product this order |
 
 #### Order Performance
 
 The machine will need to publish to the `OrderPerformance` Influx bucket with the following information. Log data on issued_qty change.
 
-- `order_id`
-
-and fields:
-
-- `issued_qty` - number -  Quantity of good product this order
+| Name         | Type  | Variable Type | Details                           |
+|--------------|-------|---------------|-----------------------------------|
+| order_id     | tag   | string        | Current order id                  |
+| issued_qty   | field | number        | Count of good products this order |
 
 ### Analysing the Manufacturing Data
 
