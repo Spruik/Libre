@@ -1,6 +1,6 @@
 # ![Libre](docs/libre-logo.png)
 
-| Open source Manufacturing Execution and Performance Monitoring built on [Grafana](https://grafana.com), [Influx](https://www.influxdata.com/), and [Postgres](https://www.postgresql.org/).
+> Open source Manufacturing Execution and Performance Monitoring built on [Grafana](https://grafana.com), [Influx](https://www.influxdata.com/), and [Postgres](https://www.postgresql.org/).
 
 Define your master data, push your machine metrics to modernize your manufacturing and start collecting and analysing your manufacturing data with Libre. Libre is an open source manufacturing execution and performance monitoring tool.
 
