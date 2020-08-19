@@ -26,10 +26,11 @@ Libre requires the following on an x86 architecture server
 - docker-compose (>= 1.25 required)
 - git (>= 2 optional)
 
-The `docker-compose.yml` file is required to start. Easiest way to get is to clone this repository.
+The `docker-compose.yml` file is required to start. Easiest way to get this is to clone this repository.
 
 ```shell
 $ git clone https://github.com/Spruik/Libre
+
 Cloning into 'Libre'...
 remote: Enumerating objects: 165, done.
 remote: Counting objects: 100% (165/165), done.
@@ -44,20 +45,23 @@ Creating libre-grafana_influx_1   ... done
 Creating libre-grafana_postREST_1 ... done
 Creating libre-grafana_grafana_1  ... done
 
-$
 ```
 
 #### Set Grafana Admin Password
 
-Once Libre is installed and running. Navigate to `http://<server>:3000/` and you will be prompted to login. Use the default grafana login username `admin` and password `admin`. You will then be prompted to change the default password.
+Once Libre is installed and running, navigate to `http://<server>:3000/` and and use the default grafana login username `admin` and password `admin` to login. You will then be prompted to change the default password.
 
 ### Define your factory Model
 
 Define your factory model using the provided `SmartFactory/Master Data` dashboard. Start by long-clicking the Enterprise in the equipment panel and add a Site. Long-click the newly created site and add an Area. Continue this process to add in a Line and equipment on the line. Add in any additional Sites, area, lines and equipment to mimic your enterprise.
 
+![Equipment](/docs/equipment.png)
+
 Next, define your reason codes. Long click ReasonCodes in the Reason Codes panel and add a category. Once a category has been created, long click the category to add in a reason.
 
 | Two recommend categories are `Planned` and `Unplanned`
+
+![Reason Codes](/docs/reason-codes.png)
 
 Ingredients are added during product operations. Products are made up of a number of product operations. Finally products can be categorized by groups. Start by entering in Raw Material information by clicking the (+) on the Raw Material panel. These are the ingredients that go into your final product. Once raw materials have been added, add in the required Product Operationsin the Product Operation panel. Product Operations are the steps to manufacture the final product and is where a raw ingredient is added. For example `Fill Tank` or `Add Label`.
 

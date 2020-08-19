@@ -45,4 +45,6 @@ Creating libre-grafana_grafana_1     ... done
 
 4. Navigate to `https://localhost:3000` to start/stop and complete a line.
 
+![Simulation](simulator.png)
+
 ## Example
