@@ -26,12 +26,14 @@ services:
   postgres:
     build: ./postgres
     environment: *common-postgres-variables
+    ports:
+      - 5432:5432
     volumes: 
       - postgres_data:/var/lib/postgresql/data
   influx:
     image: influxdb
     ports:
-        - 8086:8086
+      - 8086:8086
     environment: *common-influx-variables
     volumes:
       - influx_data:/var/lib/influxdb

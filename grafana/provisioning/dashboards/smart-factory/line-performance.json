@@ -1594,7 +1594,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"Site\", \"Area\", \"Line\", \"status\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"equipment\", \"comment\" FROM \"Availability\" WHERE $timeFilter and (\"Site\" = '$Site') and (\"Area\" = '$Area') and (\"Line\" = '$Line')",
+          "query": "SELECT \"Site\", \"Area\", \"Line\", \"status\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"equipment\", \"comment\" FROM \"Availability\" WHERE $timeFilter AND (\"Site\" = '$Site') AND (\"Area\" = '$Area') AND (\"Line\" = '$Line') AND (\"held\" = 1.0)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",

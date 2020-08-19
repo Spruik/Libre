@@ -1,0 +1,9 @@
+version: '3.6'
+
+services:
+  simulator:
+    image: spruiktec/libre-simulator
+    ports: 
+      - 1880:1880
+    depends_on:
+      - influx
