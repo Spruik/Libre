@@ -11,8 +11,7 @@ x-common-influx-variables: &common-influx-variables
 
 services:
   grafana:
-    image: spruiktec/libre-grafana
-    restart: always
+    build: ./grafana
     ports:
       - 3000:3000
     volumes:
@@ -25,8 +24,7 @@ services:
       - postgres
       - influx
   postgres:
-    image: spruiktec/libre-postgres
-    restart: always
+    build: ./postgres
     environment: *common-postgres-variables
     ports:
       - 5432:5432
@@ -34,7 +32,6 @@ services:
       - postgres_data:/var/lib/postgresql/data
   influx:
     image: influxdb
-    restart: always
     ports:
       - 8086:8086
     environment: *common-influx-variables
@@ -42,7 +39,6 @@ services:
       - influx_data:/var/lib/influxdb
   postREST:
     image: postgrest/postgrest
-    restart: always
     ports: 
       - 5436:3000
     environment:
