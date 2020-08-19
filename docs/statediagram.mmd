@@ -1,0 +1,13 @@
+stateDiagram
+  Created --> Released
+  Released --> Next
+  Released --> Running
+  Released --> Closed
+  Next --> Released
+  Next --> Running
+  Running --> Paused
+  Paused --> Running
+  Paused --> Complete
+  Running --> Complete
+  Paused --> Closed
+  Complete --> Closed
