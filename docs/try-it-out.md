@@ -28,21 +28,21 @@ Resolving deltas: 100% (49/49), done.
 
 ```shell
 $ docker-compose -f docker-compose.yml -f docker-compose.sim.yml up -d
-Creating network "libre-grafana_default" with the default driver
-Creating volume "libre-grafana_grafana_plugins" with default driver
-Creating volume "libre-grafana_grafana_provisioning" with default driver
-Creating volume "libre-grafana_postgres_data" with default driver
-Creating volume "libre-grafana_influx_data" with default driver
-Creating libre-grafana_influx_1   ... done
-Creating libre-grafana_postgres_1    ... done
-Recreating libre-grafana_simulator_1 ... done
-Creating libre-grafana_postREST_1    ... done
-Creating libre-grafana_grafana_1     ... done
+Creating network "libre_default" with the default driver
+Creating volume "libre_grafana_plugins" with default driver
+Creating volume "libre_grafana_provisioning" with default driver
+Creating volume "libre_postgres_data" with default driver
+Creating volume "libre_influx_data" with default driver
+Creating libre_influx_1   ... done
+Creating libre_postgres_1    ... done
+Creating libre_simulator_1   ... done
+Creating libre_postREST_1    ... done
+Creating libre_grafana_1     ... done
 
 ```
 
 3. Navigate to `https://localhost:3000` log into grafana with username admin and password admin. Explore the SmartFactory dashboard folder.
 
-4. Navigate to `https://localhost:3000` to start/stop and complete a line.
+4. Navigate to `https://localhost:1880/ui` to start/stop and complete a line.
 
-## Example
+![Simulation](simulator.png)
