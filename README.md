@@ -96,11 +96,11 @@ Orders have the following state model:
 
 The `SmartFactory/Line Schedule` dashboard shows the schedule for the selected manufacturing line. Orders can be set to next/running so that they are visible on the `SmartFactory/Line Performance` dashboard.
 
-### Executing Orders and Integrating Machines
+### Executing Orders
 
 Orders be executed by clicking from the list in either `SmartFactory/Line Performance` or `SmartFactory/Line Schedule` and selecting Running. Only a single order can be Running at once per line. The Paused state can be used to pause orders until they are ready to be execute on again or completed. Once an order is running machine state and counts are logged against that order.
 
-#### Integrating Machine State
+### Integrating Machines
 
 Machines will need to push data to the following buckets and schemas.
 
