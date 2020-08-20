@@ -2,13 +2,15 @@
 
 > Open source Manufacturing Execution and Performance Monitoring built on [Grafana](https://grafana.com), [Influx](https://www.influxdata.com/), and [Postgres](https://www.postgresql.org/).
 
-Define your master data, push your machine metrics and start collecting and analyzing your manufacturing data with Libre to modernize your manufacturing. Libre is an open source manufacturing execution and performance monitoring tool.
+Define your master data, push your machine metrics, start collecting and analyzing your manufacturing data with Libre. Libre is an open source manufacturing execution and performance monitoring tool.
 
 - _Define:_ Your manufacturing master data including your enterprise model, downtime reasons, products, ingredients and product steps.
 - _Capture:_ Connect up your machines using a variety of methods into key buckets with an InfluxDB Historian
 - _Use:_ Schedulers create and schedule orders, operators execute orders and capture downtime reasons.
 - _Improve:_ Get key insights into your manufacturing, understand your biggest losses, visualize OEE.
 - _Extensible:_ Built on Grafana, Influx and postgres push your key process parameters to view alongside your production dashboards. Extend with your Grafana dashboards. Free to innovate.
+
+!(Libre)[docs/libre-line-performance.png]
 
 ## Try it out
 
@@ -160,7 +162,7 @@ The machine will need to publish to the `OrderPerformance` Influx bucket with th
 | order_id     | tag   | string        | Current order id                  |
 | issued_qty   | field | number        | Count of good products this order |
 
-### Analysing the Manufacturing Data
+### Analyzing the Manufacturing Data
 
 Analyse your manufacturing data using the `SmartFactory/Line Performance` and `SmartFactory/Analysis` dashboards. Line Performance offers analysis of performance and availability whilst the Analysis dashboard drills into time loss through Downtime Pareto graphs and sunbursts of both Downtime duration and frequency.
 
