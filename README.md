@@ -40,10 +40,16 @@ Receiving objects: 100% (165/165), 176.45 KiB | 3.60 MiB/s, done.
 Resolving deltas: 100% (49/49), done.
 
 $ docker-compose up -d
-Creating libre-grafana_postgres_1 ... done
-Creating libre-grafana_influx_1   ... done
-Creating libre-grafana_postREST_1 ... done
-Creating libre-grafana_grafana_1  ... done
+Creating network "libre_default" with the default driver
+Creating volume "libre_grafana_plugins" with default driver
+Creating volume "libre_grafana_provisioning" with default driver
+Creating volume "libre_postgres_data" with default driver
+Creating volume "libre_influx_data" with default driver
+Creating libre_influx_1   ... done
+Creating libre_postgres_1 ... done
+Creating libre_grafana_1  ... done
+Creating libre_postREST_1 ... done
+
 
 ```
 
