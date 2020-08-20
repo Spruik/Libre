@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Libre-Grafana</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Login</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000/login<datalist><option>http://localhost:3000/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=user<datalist><option>name=user</option><option>//input[@name='user']</option><option>//div[@id='login-view']/form/div/input</option><option>//input</option><option>css=input[name="user"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=user<datalist><option>name=user</option><option>//input[@name='user']</option><option>//div[@id='login-view']/form/div/input</option><option>//input</option><option>css=input[name="user"]</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>//input[@id='inputPassword']</option><option>//div[@id='login-view']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#inputPassword</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>//input[@id='inputPassword']</option><option>//div[@id='login-view']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#inputPassword</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//div[@id='login-view']/form/div[3]/button</option><option>//button</option><option>css=button.btn.btn-large.p-x-2.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=newPassword<datalist><option>id=newPassword</option><option>name=newPassword</option><option>//input[@id='newPassword']</option><option>//div[@id='change-password-view']/form/div/input</option><option>//div[2]/form/div/input</option><option>css=#newPassword</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Skip<datalist><option>link=Skip</option><option>//a[contains(text(),'Skip')]</option><option>//div[@id='change-password-view']/form/div[3]/a</option><option>//div[3]/a</option><option>css=a.btn.btn-link</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Logout</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000/?orgId=1<datalist><option>http://localhost:3000/?orgId=1</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//span/img<datalist><option>//span/img</option><option>css=span.icon-circle.sidemenu-icon &gt; img</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Sign out<datalist><option>link=Sign out</option><option>//a[contains(text(),'Sign out')]</option><option>//a[contains(@href, '/logout')]</option><option>//div[3]/div/ul/li[3]/a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">First Time Login</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000/login<datalist><option>http://localhost:3000/login</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=user<datalist><option>name=user</option><option>//input[@name='user']</option><option>//div[@id='login-view']/form/div/input</option><option>//input</option><option>css=input[name="user"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=user<datalist><option>name=user</option><option>//input[@name='user']</option><option>//div[@id='login-view']/form/div/input</option><option>//input</option><option>css=input[name="user"]</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>//input[@id='inputPassword']</option><option>//div[@id='login-view']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#inputPassword</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>//input[@id='inputPassword']</option><option>//div[@id='login-view']/form/div[2]/input</option><option>//div[2]/input</option><option>css=#inputPassword</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//div[@id='login-view']/form/div[3]/button</option><option>//button</option><option>css=button.btn.btn-large.p-x-2.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=newPassword<datalist><option>id=newPassword</option><option>name=newPassword</option><option>//input[@id='newPassword']</option><option>//div[@id='change-password-view']/form/div/input</option><option>//div[2]/form/div/input</option><option>css=#newPassword</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Skip<datalist><option>link=Skip</option><option>//a[contains(text(),'Skip')]</option><option>//div[@id='change-password-view']/form/div[3]/a</option><option>//div[3]/a</option><option>css=a.btn.btn-link</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Check for Dashboards</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000/?orgId=1<datalist><option>http://localhost:3000/?orgId=1</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//a[contains(text(),'Home')])[2]<datalist><option>xpath=(//a[contains(text(),'Home')])[2]</option><option>//div/div/div/a</option><option>css=div.navbar-page-btn &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[2]/div/span<datalist><option>//div[2]/div/span</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[2]/div[3]/a/span[2]/div<datalist><option>//div[2]/div[3]/a/span[2]/div</option></datalist></td><td>Analytics</td>
+</tr>
+<tr><td>assertText</td><td>//div[2]/div[3]/a[2]/span[2]/div<datalist><option>//div[2]/div[3]/a[2]/span[2]/div</option></datalist></td><td>Line Performance</td>
+</tr>
+<tr><td>assertText</td><td>//div[2]/div[3]/a[3]/span[2]/div<datalist><option>//div[2]/div[3]/a[2]/span[2]/div</option><option>//div[2]/div[3]/a[3]/span[2]/div</option></datalist></td><td>Line Schedule</td>
+</tr>
+<tr><td>assertText</td><td>//div[2]/div[3]/a[4]/span[2]/div<datalist><option>//div[2]/div[3]/a[2]/span[2]/div</option><option>//div[2]/div[3]/a[5]/span[2]/div</option><option>//div[2]/div[3]/a[4]/span[2]/div</option></datalist></td><td>Master Data</td>
+</tr>
+<tr><td>assertText</td><td>//div[2]/div[3]/a[5]/span[2]/div<datalist><option>//div[2]/div[3]/a[2]/span[2]/div</option><option>//div[2]/div[5]/a[2]/span[2]/div</option><option>//div[2]/div[5]/a[5]/span[2]/div</option><option>//div[2]/div[3]/a[5]/span[2]/div</option></datalist></td><td>Scheduling</td>
+</tr>
+<tr><td>click</td><td>//dashboard-search/div[2]/div<datalist><option>//dashboard-search/div[2]/div</option><option>css=div.search-dropdown</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Performance Data</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:3000/?orgId=1<datalist><option>http://localhost:3000/?orgId=1</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//a[contains(text(),'Home')])[2]<datalist><option>xpath=(//a[contains(text(),'Home')])[2]</option><option>//div/div/div/a</option><option>css=div.navbar-page-btn &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[2]/div/span<datalist><option>//div[2]/div/span</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[2]/div[3]/a[2]/span[2]/div<datalist><option>//div[2]/div[3]/a[2]/span[2]/div</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
