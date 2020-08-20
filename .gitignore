@@ -1,2 +1,4 @@
 /grafana/plugins
 /grafana/plugins/
+tmp
+tmp/
