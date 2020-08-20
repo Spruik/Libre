@@ -164,6 +164,27 @@ The machine will need to publish to the `OrderPerformance` Influx bucket with th
 
 Analyse your manufacturing data using the `SmartFactory/Line Performance` and `SmartFactory/Analysis` dashboards. Line Performance offers analysis of performance and availability whilst the Analysis dashboard drills into time loss through Downtime paretos and sunbursts of both Downtime duration and frequency.
 
+## Developing
+
+Prerequisites
+
+- docker (>= 18 required)
+- git (>= 1.20 required)
+
+1. Run the docker compose with the docker-compose.dev.yml file. Include the --build argument to build containers from source. `docker-compose -f docker-compose.dev.yml up --build`
+2. To clear data whilst developing ensure to remove volumes `docker-compose -f docker-compose.dev.yml rm -v`
+
+## Building
+
+Prerequisites
+
+- docker (>= 18 required)
+- git (>= 1.20 required)
+
+1. Clone this repository with `git clone https://github.com/Spruik/Libre` and enter directory `cd Libre`
+2. Change directory into grafana and build the container `cd grafana`, `docker build . -t spruiktec/libre-grafana`
+3. Change directory up one level, into postgres and build the container `cd .. && cd postgres`, `docker build . -t spruiktec/libre-postgres`
+
 ## Contributing
 
 For any issue, there are fundamentally three ways an individual can contribute:
