@@ -10,7 +10,7 @@ Define your master data, push your machine metrics, start collecting and analyzi
 - _Improve:_ Get key insights into your manufacturing, understand your biggest losses, visualize OEE.
 - _Extensible:_ Built on Grafana, Influx and postgres push your key process parameters to view alongside your production dashboards. Extend with your Grafana dashboards. Free to innovate.
 
-!(Libre)[docs/libre-line-performance.png]
+![Libre](docs/libre-line-performance.png)
 
 ## Try it out
 
