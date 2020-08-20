@@ -12,7 +12,7 @@ Define your master data, push your machine metrics to modernize your manufacturi
 
 ## Try it out
 
-Use the [Libre Simulator](https://github.com/Spruik/Libre-Simulator) to test out Libre. The quickest way to run Libre and the Libre Simulator it is with with docker-compose `docker-compose -f docker-compose.yml -f docker-compose.sim.yml up -d` command. This will start up Libre and the simulator together. After running the command, browse to `http://localhost:3000` to access Grafana and `http://localhost:1880` to control the simulation.
+Use the [Libre Simulator](https://github.com/Spruik/Libre-Simulator) to test out Libre. The quickest way to run Libre and the Libre Simulator it is with with docker-compose `docker-compose -f docker-compose.yml -f docker-compose.sim.yml up -d` command. This will start up Libre and the simulator together. After running the command, browse to `http://localhost:3000` to access Grafana and `http://localhost:1880/ui` to control the simulation.
 
 See [Try it out](/docs/try-it-out.md) for more information.
 
@@ -49,7 +49,6 @@ Creating libre_influx_1   ... done
 Creating libre_postgres_1 ... done
 Creating libre_grafana_1  ... done
 Creating libre_postREST_1 ... done
-
 
 ```
 
