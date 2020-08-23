@@ -24,6 +24,10 @@ Resolving deltas: 100% (49/49), done.
 
 ```
 
+```shell
+cd Libre
+```
+
 2. Start Libre with Libre Simulator `docker-compose -f docker-compose.yml -f docker-compose.sim.yml up -d`
 
 ```shell
