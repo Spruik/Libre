@@ -201,4 +201,10 @@ Libre is distributed under the [Apache 2.0 License](https://github.com/spruik/li
 
 ## Change Log
 
+- 1.0.1
+  - Fix Line Performance Downtime table event duration
+  - Fix Line Performance Graph Query Bug
+  - Fix Spelling
+  - Bump Revision
+
 - 1.0.0 Initial Public Release
