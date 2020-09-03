@@ -1,8 +1,8 @@
 # Try it Out
 
-Try out Libre before spending time on setup. Alternatively checkout the [Spruik Technologies](https://www.youtube.com/channel/UCLSo9vtYPXkuOJkXNnooCjQ) youtube channel for videos.
+Try out Libre before spending time on setup. Alternatively checkout the [Spruik Technologies](https://www.youtube.com/channel/UCLSo9vtYPXkuOJkXNnooCjQ) YouTube channel for videos.
 
-## Prerequisits
+## Prerequisites
 
 - docker (>= 18 required)
 - docker-compose (>= 1.25  required)
@@ -45,7 +45,7 @@ Creating libre_grafana_1     ... done
 
 ```
 
-3. Navigate to `https://localhost:3000` log into grafana with username admin and password admin. Explore the SmartFactory dashboard folder.
+3. Navigate to `https://localhost:3000` log into Grafana with username admin and password admin. Explore the SmartFactory dashboard folder.
 
 4. Navigate to `https://localhost:1880/ui` to start/stop and complete a line.
 
