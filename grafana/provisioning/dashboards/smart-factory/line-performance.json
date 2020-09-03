@@ -19,7 +19,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 3,
-  "iteration": 1599142232462,
+  "iteration": 1599145406842,
   "links": [
     {
       "asDropdown": true,
@@ -1188,7 +1188,7 @@
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$interval"
               ],
               "type": "time"
             },
@@ -1216,13 +1216,7 @@
               },
               {
                 "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "held"
-                ],
-                "type": "alias"
+                "type": "first"
               }
             ]
           ],
@@ -1296,7 +1290,7 @@
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$interval"
               ],
               "type": "time"
             },
@@ -1322,7 +1316,7 @@
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "first"
               }
             ]
           ],
@@ -1351,7 +1345,7 @@
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$interval"
               ],
               "type": "time"
             },
@@ -1377,7 +1371,7 @@
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "first"
               }
             ]
           ],
@@ -1406,7 +1400,7 @@
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$interval"
               ],
               "type": "time"
             },
@@ -1433,7 +1427,7 @@
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "first"
               }
             ]
           ],
@@ -1462,7 +1456,7 @@
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -1488,7 +1482,7 @@
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "first"
               }
             ]
           ],
@@ -1783,7 +1777,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"Site\", \"Area\", \"Line\", \"status\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"equipment\", \"comment\" FROM \"Availability\" WHERE $timeFilter AND (\"Site\" = '$Site') AND (\"Area\" = '$Area') AND (\"Line\" = '$Line') AND (\"held\" = 1.0)",
+          "query": "SELECT \"Site\", \"Area\", \"Line\", \"status\", \"execute\", \"held\", \"idle\", \"stopped\", \"complete\", \"category\", \"reason\", \"equipment\", \"comment\" FROM \"Availability\" WHERE $timeFilter AND (\"Site\" = '$Site') AND (\"Area\" = '$Area') AND (\"Line\" = '$Line')",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",
