@@ -18,8 +18,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1596740646636,
+  "id": 3,
+  "iteration": 1599142232462,
   "links": [
     {
       "asDropdown": true,
@@ -1116,6 +1116,7 @@
       },
       "hiddenSeries": false,
       "id": 2,
+      "interval": "",
       "legend": {
         "avg": false,
         "current": false,
@@ -1140,35 +1141,41 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "Performance.execute",
+          "alias": "Execute",
           "color": "#96D98D",
           "fill": 1,
           "steppedLine": true,
           "yaxis": 2
         },
         {
-          "alias": "Performance.held",
+          "alias": "Held",
           "color": "#AD0317",
           "fill": 10,
           "steppedLine": true,
           "yaxis": 2
         },
         {
-          "alias": "Performance.idle",
+          "alias": "Idle",
           "fill": 2,
           "steppedLine": true,
           "yaxis": 2
         },
         {
-          "alias": "Performance.stopped",
+          "alias": "Stopped",
           "color": "#70dbed",
           "steppedLine": true,
           "yaxis": 2
         },
         {
-          "alias": "Performance.actual_rate",
+          "alias": "Actual Rate",
           "color": "#73BF69",
           "steppedLine": true
+        },
+        {
+          "alias": "Complete",
+          "color": "#3274D9",
+          "steppedLine": true,
+          "yaxis": 2
         }
       ],
       "spaceLength": 10,
@@ -1176,7 +1183,7 @@
       "steppedLine": true,
       "targets": [
         {
-          "alias": "",
+          "alias": "Held",
           "format": "time_series",
           "groupBy": [
             {
@@ -1192,6 +1199,7 @@
               "type": "fill"
             }
           ],
+          "hide": false,
           "measurement": "Performance",
           "orderByTime": "ASC",
           "policy": "default",
@@ -1213,48 +1221,6 @@
               {
                 "params": [
                   "held"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "idle"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "idle"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "stopped"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "stopped"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "execute"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "execute"
                 ],
                 "type": "alias"
               }
@@ -1281,7 +1247,9 @@
           ]
         },
         {
+          "alias": "Actual Rate",
           "groupBy": [],
+          "hide": false,
           "measurement": "Performance",
           "orderByTime": "ASC",
           "policy": "default",
@@ -1300,6 +1268,227 @@
                   "actual_rate"
                 ],
                 "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Site",
+              "operator": "=~",
+              "value": "/^$Site$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Area",
+              "operator": "=~",
+              "value": "/^$Area$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Line",
+              "operator": "=~",
+              "value": "/^$Line$/"
+            }
+          ]
+        },
+        {
+          "alias": "Idle",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Performance",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "idle"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Site",
+              "operator": "=~",
+              "value": "/^$Site$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Area",
+              "operator": "=~",
+              "value": "/^$Area$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Line",
+              "operator": "=~",
+              "value": "/^$Line$/"
+            }
+          ]
+        },
+        {
+          "alias": "Execute",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Performance",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "execute"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Site",
+              "operator": "=~",
+              "value": "/^$Site$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Area",
+              "operator": "=~",
+              "value": "/^$Area$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Line",
+              "operator": "=~",
+              "value": "/^$Line$/"
+            }
+          ]
+        },
+        {
+          "alias": "Stopped",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "Performance",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "stopped"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "Site",
+              "operator": "=~",
+              "value": "/^$Site$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Area",
+              "operator": "=~",
+              "value": "/^$Area$/"
+            },
+            {
+              "condition": "AND",
+              "key": "Line",
+              "operator": "=~",
+              "value": "/^$Line$/"
+            }
+          ]
+        },
+        {
+          "alias": "Complete",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Performance",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "complete"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -1383,7 +1572,7 @@
       "hideExecute": true,
       "id": 26,
       "links": [],
-      "measurementOK": false,
+      "measurementOK": true,
       "pageSize": null,
       "reasonCodeEndPoint": "reason_code",
       "scroll": true,
