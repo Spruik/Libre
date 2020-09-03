@@ -84,7 +84,7 @@ Now that you have defined your factory model, downtime reasons, ingredients, pro
 
 ### Scheduling Orders
 
-Schedule orders on your lines using the `SmartFactory/Schedulling` dashboard. To setup use the `Production Line Start Time Setter` to define the start time for each line. This is the time whereby an order will be first scheduled for the day. For 24hr operation, set to 12:00AM.
+Schedule orders on your lines using the `SmartFactory/Scheduling` dashboard. To setup use the `Production Line Start Time Setter` to define the start time for each line. This is the time whereby an order will be first scheduled for the day. For 24hr operation, set to 12:00AM.
 
 Use the `Scheduler Order Management Table` panel to create orders. Click the (+) define the order details and submit. Orders can be edited until they are released. Once an order has been released it can no longer be edited. Orders are edited by clicking in them in the panel.
 
