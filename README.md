@@ -201,6 +201,9 @@ Libre is distributed under the [Apache 2.0 License](https://github.com/spruik/li
 
 ## Change Log
 
+- 1.0.2
+  - Bump [Libre-Production-Line-Time-Setter-Panel](https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/releases/download/v1.0.4/libre-production-line-time-setter-panel.tar.gz) from 1.0.3 to 1.0.4
+
 - 1.0.1
   - Fix Line Performance Downtime table event duration
   - Fix Line Performance Graph Query Bug

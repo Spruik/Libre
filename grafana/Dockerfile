@@ -46,7 +46,7 @@ RUN cd /var/lib/grafana/plugins \
  && rm libre-reason-codes-crud-tree-chart-panel.tar.gz
 
 RUN cd /var/lib/grafana/plugins \
- && wget https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/releases/latest/download/libre-production-line-time-setter-panel.tar.gz \
+ && wget https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/releases/download/v1.0.4/libre-production-line-time-setter-panel.tar.gz \
  && mkdir ./libre-production-line-time-setter-panel \
  && tar -xf libre-production-line-time-setter-panel.tar.gz -C ./libre-production-line-time-setter-panel \
  && rm libre-production-line-time-setter-panel.tar.gz
