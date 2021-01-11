@@ -12,7 +12,7 @@ This integration is for a hub and spoke architecture of node-red instances. At e
 2. Install additional nodes via the [palette manager](https://nodered.org/docs/user-guide/editor/palette/manager#installing-nodes)
    1. node-red-node-smooth
    2. bigtimer
-3. Import [Template](./Libre Template.json)
+3. Import [Template](./Libre%20Template.json)
    1. Configure http request nodes with your influxdb address
 4. Deploy template
 
