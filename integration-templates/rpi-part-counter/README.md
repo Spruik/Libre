@@ -8,17 +8,17 @@ This integration is for a hub and spoke architecture of node-red instances. At e
 
 ### Hub
 
-1. Install (node-red)[https://nodered.org/docs/getting-started/]
-2. Install additional nodes via the (palette manager)[https://nodered.org/docs/user-guide/editor/palette/manager#installing-nodes]
+1. Install [node-red](https://nodered.org/docs/getting-started/)
+2. Install additional nodes via the [palette manager](https://nodered.org/docs/user-guide/editor/palette/manager#installing-nodes)
    1. node-red-node-smooth
    2. bigtimer
-3. Import (Template)[./Libre Template.json]
+3. Import [Template](./Libre Template.json)
    1. Configure http request nodes with your influxdb address
 4. Deploy template
 
 ### Spoke
 
-1. Install (node-red)[https://nodered.org/docs/getting-started/]
+1. Install [node-red](https://nodered.org/docs/getting-started/)
 2. Add counter to i/o input node
 3. Publish changes to <HUB-IP-ADDRESS>:9245
 
