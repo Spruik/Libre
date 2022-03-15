@@ -102,7 +102,7 @@ Orders be executed by clicking from the list in either `SmartFactory/Line Perfor
 
 ### Integrating Machines
 
-Machines will need to push data to the following buckets and schemas.
+Machines will need to push data to the following buckets and schemas. Some integration templates ![Integration Templates](/integration-templates/README.md) are also provided within this repository.
 
 #### Availability
 
@@ -155,11 +155,12 @@ The machine will need to publish to the `Quality` Influx bucket with the followi
 
 #### Order Performance
 
-The machine will need to publish to the `OrderPerformance` Influx bucket with the following information. Log data on issued_qty change.
+The machine will need to publish to the `OrderPerformance` Influx bucket with the following information. Log data on issued_qty change. Note that order_id and product_id must match to update the current order panel.
 
 | Name         | Type  | Variable Type | Details                           |
 |--------------|-------|---------------|-----------------------------------|
 | order_id     | tag   | string        | Current order id                  |
+| product_id   | tag   | string        | Current product id                |
 | issued_qty   | field | number        | Count of good products this order |
 
 ### Analyzing the Manufacturing Data
@@ -200,6 +201,11 @@ For any issue, there are fundamentally three ways an individual can contribute:
 Libre is distributed under the [Apache 2.0 License](https://github.com/spruik/libre/blob/master/LICENSE).
 
 ## Change Log
+
+- 1.0.3
+  - Documentation Update
+  - Added integration Templates
+  - Added rpi-part-counter. Credits to R.W. for their submission!
 
 - 1.0.2
   - Bump [Libre-Production-Line-Time-Setter-Panel](https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/releases/download/v1.0.4/libre-production-line-time-setter-panel.tar.gz) from 1.0.3 to 1.0.4
