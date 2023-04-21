@@ -102,7 +102,7 @@ Orders be executed by clicking from the list in either `SmartFactory/Line Perfor
 
 ### Integrating Machines
 
-Machines will need to push data to the following buckets and schemas. Some integration templates ![Integration Templates](/integration-templates/README.md) are also provided within this repository.
+Machines will need to push data to the following buckets and schemas. Some [integration templates](/integration-templates/README.md) are also provided within this repository.
 
 #### Availability
 
